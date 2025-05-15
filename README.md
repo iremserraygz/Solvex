@@ -77,7 +77,7 @@ Solvex is designed with a microservice architecture for better scalability, main
 
 ## 🖼️ Screenshots
 
-*(Add a few key screenshots of your project here. For example:)*
+
 1.  **Main Page**
    ![image](https://github.com/user-attachments/assets/10ed268c-ee50-465c-a65a-f59d787e569a)
 2. **Login Page**
@@ -188,7 +188,7 @@ The following steps should be applied for each backend service (Auth, Question, 
 
 ## 🚀 Future Work and Enhancements
 
-*   [+] Add more question types (e.g., Matching, Drag & Drop).
+*   [ ] Add more question types (e.g., Matching, Drag & Drop).
 *   [ ] Implement advanced exam security features (e.g., proctoring integration, plagiarism detection).
 *   [ ] Allow bulk question import for instructors (Excel/CSV format).
 *   [ ] Provide more detailed performance feedback and progress tracking for students.
