@@ -78,21 +78,27 @@ Solvex is designed with a microservice architecture for better scalability, main
 ## 🖼️ Screenshots
 
 *(Add a few key screenshots of your project here. For example:)*
+1.  **Main Page**
+   ![image](https://github.com/user-attachments/assets/10ed268c-ee50-465c-a65a-f59d787e569a)
+2. **Login Page**
+   ![image](https://github.com/user-attachments/assets/c44f6f46-71ee-40cb-b823-c6e3e319434e)
+3.  **Create Account Page**
+   ![image](https://github.com/user-attachments/assets/a6f32ed6-2d15-49c1-8d68-d012960f0901)
+4. **Instructor Dashboard Overview**
+   ![image](https://github.com/user-attachments/assets/b2d9f0bf-b914-4943-85bf-680fbab039f4)
+5.  **Exam Creation Interface**
+    ![image](https://github.com/user-attachments/assets/94b7ed07-e931-4dc5-91fd-c3bedc224c0d)
+6.  **Question Pool Management**
+    ![image](https://github.com/user-attachments/assets/100f7c94-a627-4521-bf6d-fabdb7fb1896)
+7.  **Exam Results Analysis Chart**
+    ![image](https://github.com/user-attachments/assets/e00347ec-a92d-40b7-b01a-7ef859dab43f)
+8.  **Student Exam Taking Interface**
+   ![image](https://github.com/user-attachments/assets/5c57b1cb-8178-40ed-82e9-7b1d3d4046dc)
+9.  **Instructor Exam History**
+    ![image](https://github.com/user-attachments/assets/accd8db3-9e7e-41be-b9bb-54c661f28940)
 
-1.  **Instructor Dashboard Overview**
-    `[Screenshot Here - e.g., instructor_dashboard.png]`
-2.  **Exam Creation Interface**
-    `[Screenshot Here - e.g., create_exam.png]`
-3.  **Question Pool Management**
-    `[Screenshot Here - e.g., question_pool.png]`
-4.  **Exam Results Analysis Chart**
-    `[Screenshot Here - e.g., exam_results_chart.png]`
-5.  **Student Exam Taking Interface**
-    `[Screenshot Here - e.g., student_taking_exam.png]`
-6.  **Student Exam History**
-    `[Screenshot Here - e.g., student_exam_history.png]`
 
-*(You can add images uploaded to GitHub in markdown format like `![Description](path/to/image.png)`)*
+
 
 ---
 
@@ -209,8 +215,8 @@ While this is a capstone project, potential contributions or feedback are always
 *   **İrem Serra Yağız and Anıl Erdal**
     *   GitHub: [@iremserraygz](https://github.com/iremserraygz)
     *   GitHub: [@anılerdal](https://github.com/Leofia)
-    *   LinkedIn: [Your LinkedIn Profile URL](https://linkedin.com/in/irem-serra-ya%C4%9F%C4%B1z-891a95234)
-    *   LinkedIn: [Your LinkedIn Profile URL](https://linkedin.com/in/an%C4%B1l-erdal-7b7b98229/)
+    *   LinkedIn: [[(https://linkedin.com/in/irem-serra-ya%C4%9F%C4%B1z-891a95234)]]
+    *   LinkedIn: [(https://linkedin.com/in/an%C4%B1l-erdal-7b7b98229/]
    
 
 
