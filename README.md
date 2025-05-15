@@ -207,7 +207,7 @@ While this is a capstone project, potential contributions or feedback are always
 ## 🧑‍💻 Developers
 
 *   **İrem Serra Yağız and Anıl Erdal**
-    *   GitHub: [@yourusername]((https://github.com/Leofia)(https://github.com/iremserraygz))
+    *   GitHub: [@yourusername]((https://github.com/iremserraygz))
     *   LinkedIn: [Your LinkedIn Profile URL]([[https://linkedin.com/in/yourprofile]](https://www.linkedin.com/in/an%C4%B1l-erdal-7b7b98229/)(https://www.linkedin.com/in/irem-serra-ya%C4%9F%C4%B1z-891a95234))
   
 
