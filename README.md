@@ -4,7 +4,7 @@
 
 **Solvex is a comprehensive web application developed with modern technologies, designed to simplify the exam creation, management, and evaluation processes for instructors, while offering students a fair and user-friendly online examination experience.**
 
-This project was developed as a final year project for the [Your Department Name] Department at [Your University Name].
+This project was developed as a final year project for the software engineering Department.
 
 ---
 
@@ -101,7 +101,7 @@ Solvex is designed with a microservice architecture for better scalability, main
 Follow these steps to run the project locally:
 
 ### Prerequisites
-*   Java Development Kit (JDK) 17 (or your version)
+*   Java Development Kit (JDK) 17 
 *   Apache Maven
 *   PostgreSQL Database Server
 *   Node.js and npm (for Frontend)
@@ -182,7 +182,7 @@ The following steps should be applied for each backend service (Auth, Question, 
 
 ## 🚀 Future Work and Enhancements
 
-*   [ ] Add more question types (e.g., Matching, Drag & Drop).
+*   [+] Add more question types (e.g., Matching, Drag & Drop).
 *   [ ] Implement advanced exam security features (e.g., proctoring integration, plagiarism detection).
 *   [ ] Allow bulk question import for instructors (Excel/CSV format).
 *   [ ] Provide more detailed performance feedback and progress tracking for students.
