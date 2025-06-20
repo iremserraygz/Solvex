@@ -1,24 +1,24 @@
-// src/components/InstructorExamResultsPage.js
 import React from 'react';
-import '../App.css'; // Global CSS
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChevronLeft, faUser, faPercentage, faChartBar, faTrophy,
-    faInfoCircle, faClipboardList, faCalendarCheck, faCheckCircle, faTimesCircle,
-    faEye // Göz ikonu
+    faInfoCircle, faClipboardList, faCheckCircle, faTimesCircle,
+    faEye
 } from '@fortawesome/free-solid-svg-icons';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
+
 function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSubmission }) {
 
     if (!examResults || Object.keys(examResults).length === 0) {
         return (
             <div className="view-exams-page animated-fade-in-up">
-                 <div className="page-header-actions">
-                     <button onClick={onBackToExams} className="back-button-page">
+                <div className="page-header-actions">
+                    <button onClick={onBackToExams} className="back-button-page">
                         <FontAwesomeIcon icon={faChevronLeft} /> Back to Manage Exams
                     </button>
                 </div>
@@ -34,7 +34,7 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
     const {
         quizTitle = "Exam Results",
         totalParticipants = 0,
-        averageScorePercentage, // Artık bu bir sayı (double) veya null olabilir
+        averageScorePercentage,
         passingScore,
         scoreDistribution = [],
         studentResults = []
@@ -91,7 +91,6 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
         return (<span className={statusClass} title={displayStatus}>{icon && <FontAwesomeIcon icon={icon} style={{ marginRight: '5px' }} />} {displayStatus}</span>);
     };
 
-    // Ortalama skoru formatla
     const formattedAvgScore = averageScorePercentage != null ? `${parseFloat(averageScorePercentage).toFixed(1)}%` : 'N/A';
 
     return (
@@ -102,17 +101,17 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
                 </button>
             </div>
 
-             <div className="widget-card exam-summary-card" style={{ marginBottom: '30px' }}>
+            <div className="widget-card exam-summary-card" style={{ marginBottom: '30px' }}>
                 <h3><FontAwesomeIcon icon={faChartBar} style={{ marginRight: '10px' }} />Results for: {quizTitle}</h3>
                 <div className="summary-details">
                     <div className="summary-item">
-                         <FontAwesomeIcon icon={faUser} />
+                        <FontAwesomeIcon icon={faUser} />
                         <span>{totalParticipants}</span>
                         Participants
                     </div>
                     <div className="summary-item">
-                         <FontAwesomeIcon icon={faPercentage} />
-                        <span>{formattedAvgScore}</span> {/* FORMATLANMIŞ DEĞER */}
+                        <FontAwesomeIcon icon={faPercentage} />
+                        <span>{formattedAvgScore}</span>
                         Avg. Score
                     </div>
                     <div className="summary-item">
@@ -124,11 +123,11 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
             </div>
 
             {scoreDistribution.length > 0 && (
-                 <div className="widget-card result-section chart-section" style={{ marginBottom: '30px' }}>
+                <div className="widget-card result-section chart-section" style={{ marginBottom: '30px' }}>
                     <h4>Score Distribution</h4>
                     <div className="chart-container">
                         <Bar options={chartOptions} data={chartData} />
-                     </div>
+                    </div>
                 </div>
             )}
 
@@ -137,47 +136,56 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
                     <h4><FontAwesomeIcon icon={faClipboardList} /> Student Submissions ({studentResults.length})</h4>
                     <div className="student-results-table-container">
                         <table className="student-results-table">
-                             <thead>
-                                <tr>
-                                    {/* Student ID yerine Student Name */}
-                                    <th>Student Name</th>
-                                    <th>Submitted At</th>
-                                    <th>Score</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
+                            <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Submitted At</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                 {studentResults.map((student, index) => (
-                                    <tr key={student.submissionId || student.userId || index}>
-                                        {/* student.studentFirstName ve student.studentLastName kullan */}
-                                        <td data-label="Student Name">
-                                            {student.studentFirstName && student.studentLastName
-                                                ? `${student.studentFirstName} ${student.studentLastName}`
-                                                : student.studentFirstName || student.studentLastName || `User ID: ${student.userId}` /* Fallback */}
-                                        </td>
+                            {studentResults.map((student, index) => {
+                                const studentFullName = (student.studentFirstName && student.studentLastName)
+                                    ? `${student.studentFirstName} ${student.studentLastName}`
+                                    : (student.studentFirstName || student.studentLastName || `User (ID: ${student.userId || 'N/A'})`); // Fallback
+
+                                return (
+                                    <tr key={student.submissionId || student.userId || `result-${index}`}>
+                                        <td data-label="Student Name">{studentFullName}</td>
                                         <td data-label="Submitted At">{formatSubmissionDate(student.submissionDate)}</td>
                                         <td data-label="Score">
-                                             {student.achievedPoints != null ? student.achievedPoints : '-'} / {student.totalPossiblePoints != null ? student.totalPossiblePoints : '-'}
-                                             {student.totalPossiblePoints != null && student.totalPossiblePoints > 0 && student.achievedPoints != null &&
+                                            {student.achievedPoints != null ? student.achievedPoints : '-'} / {student.totalPossiblePoints != null ? student.totalPossiblePoints : '-'}
+                                            {student.totalPossiblePoints != null && student.totalPossiblePoints > 0 && student.achievedPoints != null &&
                                                 ` (${((student.achievedPoints / student.totalPossiblePoints) * 100).toFixed(1)}%)`
-                                             }
+                                            }
                                         </td>
                                         <td data-label="Status">{renderStudentStatusChip(student.status)}</td>
+
                                         <td data-label="Actions">
                                             <button
                                                 className="action-btn review-submission-btn"
                                                 title="View Student's Submission"
-                                                onClick={() => onViewStudentSubmission(student.submissionId)}
-                                                disabled={!student.submissionId}
+                                                onClick={() => {
+                                                    console.log('[InstructorExamResultsPage] Review button clicked for submissionId:', student.submissionId); // DEBUG
+                                                    if (onViewStudentSubmission) { // Prop'un varlığını kontrol et
+                                                        onViewStudentSubmission(student.submissionId);
+                                                    } else {
+                                                        console.error('[InstructorExamResultsPage] onViewStudentSubmission prop is undefined!');
+                                                    }
+                                                }}
+                                                disabled={!student.submissionId || !onViewStudentSubmission}
                                             >
                                                 <FontAwesomeIcon icon={faEye} /> Review
                                             </button>
                                         </td>
+
                                     </tr>
-                                ))}
+                                );
+                            })}
                             </tbody>
-                         </table>
+                        </table>
                     </div>
                 </div>
             ) : (
@@ -187,7 +195,7 @@ function InstructorExamResultsPage({ examResults, onBackToExams, onViewStudentSu
                         No individual student submissions to display for this exam yet.
                     </p>
                 </div>
-             )}
+            )}
         </div>
     );
 }
