@@ -1,11 +1,9 @@
-// src/components/LoginScreen.js
-import React, { useState } from 'react'; // useEffect'e şu an gerek yok
-import '../App.css'; // Global CSS
+import React, { useState } from 'react';
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import authService from '../services/authService'; // Güncellenmiş authService
+import authService from '../services/authService';
 
-// onForgotPasswordClick prop'u eklendi
 function LoginScreen({ onBack, onSwitchToSignUp, onLoginSuccess, onForgotPasswordClick }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,10 +13,10 @@ function LoginScreen({ onBack, onSwitchToSignUp, onLoginSuccess, onForgotPasswor
   // Form gönderildiğinde
   const handleSubmit = (event) => {
     event.preventDefault(); // Sayfa yenilenmesini engelle
-    setError('');         // Eski hatayı temizle
-    setLoading(true);     // Yükleniyor durumunu başlat
+    setError('');
+    setLoading(true);
 
-    // authService.login fonksiyonunu çağır (güncellenmiş versiyon)
+    // authService.login fonksiyonunu çağır
     authService.login(email, password)
         .then(
             (userInfo) => { // Başarılı olursa userInfo objesi döner (token değil)
@@ -32,20 +30,17 @@ function LoginScreen({ onBack, onSwitchToSignUp, onLoginSuccess, onForgotPasswor
               }
             },
             (error) => { // Hata olursa (authService'den fırlatılan Error objesi)
-              // Hata mesajını al (authService içinde oluşturulan mesaj)
               const resMessage = error.message || "An unexpected error occurred.";
               console.error("[LoginScreen] Login error:", error);
               setError(resMessage); // Hatayı state'e yazarak kullanıcıya göster
-              setLoading(false);    // Yükleniyor durumunu bitir
+              setLoading(false);
             }
         );
   };
 
-  // --- JSX KISMI (Önceki haliyle aynı, sadece onForgotPasswordClick eklendi) ---
   return (
       <div className="auth-container">
         <div className="auth-card">
-          {/* Geri Butonu */}
           {onBack && (
               <button onClick={onBack} className="card-back-button" aria-label="Go Back" disabled={loading}>
                 <FontAwesomeIcon icon={faArrowLeft} />
@@ -60,7 +55,6 @@ function LoginScreen({ onBack, onSwitchToSignUp, onLoginSuccess, onForgotPasswor
 
             {error && <p className="error-message">{error}</p>}
 
-            {/* Email Input */}
             <div className="input-group">
             <span className="input-icon-wrapper">
               <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
