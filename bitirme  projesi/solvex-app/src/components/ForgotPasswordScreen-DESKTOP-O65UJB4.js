@@ -1,16 +1,14 @@
-// src/components/ForgotPasswordScreen.js
 import React, { useState } from 'react';
-import '../App.css'; // Global CSS
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faArrowLeft, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import authService from '../services/authService'; // Güncellenmiş authService
+import authService from '../services/authService';
 
-// Props: onBack (Geri dönmek için), onSwitchToLogin (Login'e geçmek için - opsiyonel)
 function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState(''); // Başarı veya bilgi mesajı
-    const [error, setError] = useState('');     // Hata mesajı
-    const [loading, setLoading] = useState(false); // İşlem durumu
+    const [message, setMessage] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,28 +16,21 @@ function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
         setMessage('');
         setLoading(true);
 
-        // --- npm satırı kaldırıldı ---
 
-        // --- GERÇEK API ÇAĞRISI ---
         authService.forgotPassword(email)
             .then(responseMessage => {
-                // Başarılı yanıt alındı (backend'den gelen mesaj)
                 setLoading(false);
-                setMessage(responseMessage); // Backend'den gelen mesajı göster
-                // setEmail(''); // E-posta alanını temizlemek isteğe bağlı
+                setMessage(responseMessage);
             })
             .catch(error => {
-                // Hata yakalandı (authService'den fırlatılan Error objesi)
                 setLoading(false);
                 setError(error.message || "An unexpected error occurred. Please try again."); // Hata mesajını göster
             });
-        // --- --- ---
     };
 
     return (
         <div className="auth-container">
             <div className="auth-card">
-                {/* Geri Butonu */}
                 {onBack && (
                     <button onClick={onBack} className="card-back-button" aria-label="Go Back" disabled={loading}>
                         <FontAwesomeIcon icon={faArrowLeft} />
@@ -52,12 +43,9 @@ function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
                         <p className="auth-subtitle">Enter your email to receive reset instructions.</p>
                     </div>
 
-                    {/* Mesaj ve Hata Alanları */}
-                    {/* Başarı mesajı için stil (App.css'e eklenebilir veya buradaki gibi inline) */}
                     {message && <p className="success-message">{message}</p>}
                     {error && <p className="error-message">{error}</p>}
 
-                    {/* E-posta Girişi */}
                     <div className="input-group">
                         <span className="input-icon-wrapper">
                           <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
@@ -70,13 +58,10 @@ function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
                             required
                             className="input-field"
                             aria-label="Email Address"
-                            // Yükleniyorsa veya BAŞARI mesajı gösteriliyorsa pasif yap (hata varsa aktif kalabilir)
                             disabled={loading || !!message}
                         />
                     </div>
 
-                    {/* Gönderme Butonu */}
-                    {/* Başarı mesajı gösterilmiyorsa butonu göster */}
                     {!message && (
                         <button type="submit" className="submit-button" disabled={loading}>
                             {loading ? (
@@ -90,8 +75,6 @@ function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
                         </button>
                     )}
 
-                    {/* Login'e Dönüş Linki (Opsiyonel) */}
-                    {/* Başarı mesajı gösterilmiyorsa ve onSwitchToLogin varsa */}
                     {onSwitchToLogin && !message && (
                         <p className="auth-switch-link">
                             Remembered your password?{' '}
@@ -100,38 +83,36 @@ function ForgotPasswordScreen({ onBack, onSwitchToLogin }) {
                             </button>
                         </p>
                     )}
-                    {/* Başarı mesajı gösteriliyorsa ve onSwitchToLogin varsa */}
                     {message && onSwitchToLogin && (
                         <button
                             type="button"
                             onClick={onSwitchToLogin}
                             className="submit-button secondary-action"
                             style={{marginTop: '15px'}}
-                            disabled={loading} // Butonun tekrar tıklanmasını engellemek için loading'i de kontrol et
+                            disabled={loading}
                         >
                             Back to Login
                         </button>
                     )}
                 </form>
             </div>
-            {/* Başarı mesajı için stil (App.css'e eklenebilir) */}
             <style jsx>{`
                 .success-message {
-                    color: #10b981; /* Yeşil tonu */
-                    background-color: rgba(16, 185, 129, 0.1); /* Yeşil arka plan */
+                    color: #10b981; 
+                    background-color: rgba(16, 185, 129, 0.1);
                     border: 1px solid rgba(16, 185, 129, 0.3);
                     padding: 10px 15px;
-                    border-radius: 5px; /* Stilinize uygun radius */
+                    border-radius: 5px; 
                     text-align: center;
                     font-size: .85rem;
                     margin-top: -8px;
-                    margin-bottom: 15px; /* Butonlarla arayı aç */
+                    margin-bottom: 15px; 
                 }
                 .submit-button.secondary-action {
                     background: rgba(255, 255, 255, 0.1);
                     color: #cbd5e1; /* Açık gri/beyaz */
                     border: 1px solid rgba(255, 255, 255, 0.2);
-                    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Daha hafif gölge */
+                    box-shadow: 0 2px 4px rgba(0,0,0,.1); 
                 }
                 .submit-button.secondary-action:hover {
                     background: rgba(255, 255, 255, 0.15);
