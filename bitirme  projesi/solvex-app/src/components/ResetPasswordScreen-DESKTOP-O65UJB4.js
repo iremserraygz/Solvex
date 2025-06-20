@@ -1,18 +1,13 @@
-// src/components/ResetPasswordScreen.js
 import React, { useState, useEffect } from 'react';
-// react-router-dom importları KALDIRILDI
-// import { useSearchParams, useNavigate } from 'react-router-dom';
 import '../App.css'; // Global CSS
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faCheckCircle, faTimesCircle, faSpinner, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import authService from '../services/authService'; // Doğru yolu kontrol edin
+import authService from '../services/authService';
 
-// --- PROPS GÜNCELLENDİ ---
-// token: App.js'ten gelen URL token'ı
-// onPasswordResetSuccess: Başarılı sıfırlama sonrası çağrılacak fonksiyon (App.js'teki navigateToLogin)
+
 function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
 
-    // State'ler
+    // Stateler
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -21,8 +16,7 @@ function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    // --- URL'den token okuma useEffect'i KALDIRILDI ---
-    // Token artık prop olarak geliyor. Başlangıçta token kontrolü yapalım.
+
     useEffect(() => {
         if (!token) {
             console.error("ResetPasswordScreen: Token prop is missing.");
@@ -31,13 +25,11 @@ function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
         } else {
             console.log("ResetPasswordScreen: Received token via props:", token);
         }
-    }, [token]); // token prop'u değişirse (pek olası değil ama) çalışır
+    }, [token]);
 
-    // Şifre görünürlüğünü değiştirme fonksiyonları
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
     const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
 
-    // Form gönderildiğinde
     const handleSubmit = (event) => {
         event.preventDefault();
         setError('');
@@ -69,9 +61,8 @@ function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
                 setPassword(''); // Alanları temizle
                 setConfirmPassword('');
 
-                // Başarı sonrası App.js'e bildir (login'e yönlendirme için)
+                // login'e yönlendirme için
                 if (onPasswordResetSuccess) {
-                    // Yönlendirmeden önce mesajın görünmesi için kısa bir bekleme ekleyebiliriz
                     setTimeout(() => {
                         onPasswordResetSuccess(); // App.js'teki navigateToLogin'i çağırır
                     }, 2000); // 2 saniye sonra yönlendir
@@ -90,7 +81,6 @@ function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
     return (
         <div className="auth-container">
             <div className="auth-card">
-                {/* Geri butonu genellikle bu sayfada olmaz */}
 
                 <form onSubmit={handleSubmit} className="auth-form-content">
                     <div className="form-header">
@@ -160,18 +150,14 @@ function ResetPasswordScreen({ token, onPasswordResetSuccess }) {
                     )}
 
                     {/* Başarı veya token yok/hata varsa Login'e dön butonu */}
-                    {(message || error) && ( // Sadece mesaj veya hata varsa göster
-                        // onPasswordResetSuccess prop'u zaten yönlendirme yapacak,
-                        // ama kullanıcı isterse diye ekstra buton eklenebilir.
-                        // Veya sadece mesaj sonrası otomatik yönlendirme yeterli olabilir.
+                    {(message || error) && (
                         <button
                             type="button"
-                            // onClick={onPasswordResetSuccess} // Prop'u direkt kullanabiliriz
-                            // Veya App.js'e ayrı bir onGoBackToLogin prop'u ekleyebiliriz
-                            onClick={() => window.location.href = '/login'} // Basit yönlendirme
+
+                            onClick={() => window.location.href = '/login'}
                             className="submit-button secondary-action"
                             style={{marginTop: '15px'}}
-                            disabled={loading} // Hata durumunda tekrar tıklanabilir mi?
+                            disabled={loading}
                         >
                             Back to Login
                         </button>
