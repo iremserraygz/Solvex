@@ -209,6 +209,7 @@ While this is a capstone project, potential contributions or feedback are always
 5.  Open a Pull Request.
 
 ---
+Demo video of the project: https://youtu.be/RDQWWmB0isQ?si=_hC-Ogq3NqcIgJ3r
 
 ## 🧑‍💻 Developers
 
