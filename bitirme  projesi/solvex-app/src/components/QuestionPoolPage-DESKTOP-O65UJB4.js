@@ -1,6 +1,5 @@
-// src/components/QuestionPoolPage.js
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
-import '../App.css'; // Global CSS
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faSearch, faFilter, faEdit, faTrashAlt, faPlus, faTag, faList,
@@ -12,14 +11,13 @@ function QuestionPoolPage({
     isLoading = false,
     error = null,
     onRetryFetch,
-    // --- Mode Specific Props ---
-    mode = 'poolManagement', // 'poolManagement' or 'addToExam'
-    onNavigateToCreate,      // Used in 'poolManagement' mode
-    onEditQuestion,          // Used in 'poolManagement' mode
-    onDeleteQuestion,        // Used in 'poolManagement' mode
-    onAddSelectedToExam,     // Used in 'addToExam' mode
-    onCancel,                // Used in 'addToExam' mode (Back button)
-    existingQuestionIdsInExam = new Set(), // IDs already in the current exam draft (for 'addToExam' mode)
+    mode = 'poolManagement',
+    onNavigateToCreate,
+    onEditQuestion,
+    onDeleteQuestion,
+    onAddSelectedToExam,
+    onCancel,
+    existingQuestionIdsInExam = new Set(),
 }) {
 
     const [searchTerm, setSearchTerm] = useState('');
@@ -33,7 +31,7 @@ function QuestionPoolPage({
         setSelectedQuestions(new Set());
     }, [mode, questions]);
 
-    // --- Filtering and Category Logic (No changes needed) ---
+    //Filtering and Category Logic
     const filteredQuestions = useMemo(() => {
         if (isLoading || error) return [];
         return questions.filter(q => {
@@ -52,7 +50,7 @@ function QuestionPoolPage({
         return [...new Set(questions.map(q => q.category).filter(Boolean))].sort();
     }, [questions, isLoading, error]);
 
-    // --- Selection Handler (Modified to check if already in exam) ---
+    //Selection Handler (Modified to check if already in exam)
     const handleSelectQuestion = useCallback((questionId, isSelected) => {
         if (mode === 'addToExam' && existingQuestionIdsInExam.has(questionId)) {
             // Prevent selecting questions already in the exam draft for "Add" mode
@@ -69,7 +67,6 @@ function QuestionPoolPage({
         });
     }, [mode, existingQuestionIdsInExam]); // Dependencies for the check
 
-    // --- Action Handlers ---
     const handleAddSelectedClick = useCallback(() => {
         if (selectedQuestions.size === 0) {
             alert("Please select at least one question to add.");
@@ -113,10 +110,10 @@ function QuestionPoolPage({
     }
 
     return (
-        <div className="question-pool-page"> {/* Use a more specific class if needed */}
+        <div className="question-pool-page">
             {/* Filter Bar */}
             <div className="filter-bar widget-card">
-                {/* Search and Filter controls (same as before) */}
+                {/* Search and Filter controls */}
                  <div className="search-input-group">
                     <FontAwesomeIcon icon={faSearch} className="search-icon" />
                     <input type="text" className="input-field" placeholder="Search questions..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} disabled={isLoading} />
@@ -139,7 +136,7 @@ function QuestionPoolPage({
                          </select>
                      </div>
                  </div>
-                 {/* --- Mode-Specific Action Buttons --- */}
+                 {/* Mode-Specific Action Buttons */}
                  <div className="pool-actions">
                      {mode === 'poolManagement' && (
                          <button className="widget-button primary add-new-q-btn" onClick={onNavigateToCreate} disabled={isLoading}>
@@ -167,16 +164,14 @@ function QuestionPoolPage({
                          </>
                      )}
                  </div>
-                 {/* --- --- --- */}
             </div>
 
             {/* Question List Area */}
             <div className="question-list-pool widget-card">
                 <div className="list-header">
                     <h4>
-                        {/* --- Mode-Specific Title --- */}
+                        {/* Mode-Specific Title */}
                         {mode === 'addToExam' ? 'Select Questions to Add' : 'Question Pool'}
-                        {/* --- --- --- */}
                          ({isLoading ? 'Loading...' : `${filteredQuestions.length} found`})
                          {selectedQuestions.size > 0 && ` - ${selectedQuestions.size} selected`}
                     </h4>
