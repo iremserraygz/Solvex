@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="161f08ec-06f2-4678-927a-936fa88f42ce" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2vguqhllsr3nuYOVxYvdUXRJlIX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.MainScreen.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/İrem Serra Yağız/Desktop/sunum/solvex-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANIL\Desktop\06.05.2025\solvex-app\src\services" />
+      <recent name="C:\Users\ANIL\Desktop\06.05.2025\solvex-app\src\components\services" />
+      <recent name="C:\Users\ANIL\Desktop\06.05.2025\solvex-app\src\components\modals" />
+      <recent name="C:\Users\İrem Serra Yağız\solvex-app\public\images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="161f08ec-06f2-4678-927a-936fa88f42ce" name="Changes" comment="" />
+      <created>1744579230620</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744579230620</updated>
+      <workItem from="1745477002507" duration="7221000" />
+      <workItem from="1745491139958" duration="7729000" />
+      <workItem from="1745500145364" duration="1547000" />
+      <workItem from="1745668917083" duration="1700000" />
+      <workItem from="1745671297811" duration="3403000" />
+      <workItem from="1745756777049" duration="2737000" />
+      <workItem from="1745840287729" duration="597000" />
+      <workItem from="1746003994876" duration="780000" />
+      <workItem from="1746015350630" duration="30000" />
+      <workItem from="1746018728773" duration="636000" />
+      <workItem from="1746268500167" duration="11000" />
+      <workItem from="1746268824515" duration="5125000" />
+      <workItem from="1746546243326" duration="2019000" />
+      <workItem from="1746548756649" duration="7121000" />
+      <workItem from="1747165734311" duration="5510000" />
+      <workItem from="1747206569369" duration="3718000" />
+      <workItem from="1747310084571" duration="971000" />
+      <workItem from="1747652265454" duration="7990000" />
+      <workItem from="1747827029926" duration="11735000" />
+      <workItem from="1748172852396" duration="12829000" />
+      <workItem from="1748250549452" duration="595000" />
+      <workItem from="1748275277667" duration="1153000" />
+      <workItem from="1748281392920" duration="605000" />
+      <workItem from="1748324671945" duration="51000" />
+      <workItem from="1748365757492" duration="8438000" />
+      <workItem from="1748421281672" duration="6885000" />
+      <workItem from="1748681514483" duration="16108000" />
+      <workItem from="1748762827789" duration="10716000" />
+      <workItem from="1749898968694" duration="1497000" />
+      <workItem from="1749907140496" duration="1646000" />
+      <workItem from="1750164358939" duration="4286000" />
+      <workItem from="1750169882548" duration="1816000" />
+      <workItem from="1750243603687" duration="2997000" />
+      <workItem from="1750248870628" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
