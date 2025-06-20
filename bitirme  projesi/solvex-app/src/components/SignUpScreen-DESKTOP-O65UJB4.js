@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faLock, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import authService from '../services/authService'; // Servisi import etmeyi unutma
+import authService from '../services/authService';
 
 function SignUpScreen({ onBack, onSwitchToLogin }) {
-  // State'leri firstName ve lastName olarak ayıralım
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState(''); // Yeni state
   const [email, setEmail] = useState('');
@@ -24,14 +23,14 @@ function SignUpScreen({ onBack, onSwitchToLogin }) {
       setLoading(false);
       return;
     }
-    if (password.length < 6) { // Backend kuralıyla eşleştiğinden emin ol
+    if (password.length < 6) {
       setError("Password must be at least 6 characters long.");
       setLoading(false);
       return;
     }
 
     // authService'e firstName ve lastName'i ayrı ayrı gönder
-    authService.register(firstName, lastName, email, password) // Değişiklik burada
+    authService.register(firstName, lastName, email, password)
       .then(
         (response) => {
           console.log("Sign Up successful:", response.data); // Dönen string mesajı
@@ -68,7 +67,7 @@ function SignUpScreen({ onBack, onSwitchToLogin }) {
 
           {error && <p className="error-message">{error}</p>}
 
-          {/* --- Input Alanları Güncellendi --- */}
+          {/* Input Alanları */}
           <div className="input-group">
             <span className="input-icon-wrapper">
               <FontAwesomeIcon icon={faUser} className="input-icon" />
@@ -86,7 +85,6 @@ function SignUpScreen({ onBack, onSwitchToLogin }) {
 
           <div className="input-group">
             <span className="input-icon-wrapper">
-              {/* İkon aynı kalabilir veya farklı bir tane seçilebilir */}
               <FontAwesomeIcon icon={faUser} className="input-icon" />
             </span>
             <input
@@ -99,7 +97,6 @@ function SignUpScreen({ onBack, onSwitchToLogin }) {
               aria-label="Last Name"
             />
           </div>
-          {/* --- --- --- --- */}
 
 
           <div className="input-group">
