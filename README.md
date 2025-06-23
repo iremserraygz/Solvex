@@ -216,8 +216,8 @@ Demo video of the project: https://youtu.be/RDQWWmB0isQ?si=_hC-Ogq3NqcIgJ3r
 *   **İrem Serra Yağız and Anıl Erdal**
     *   GitHub: [@iremserraygz](https://github.com/iremserraygz)
     *   GitHub: [@anılerdal](https://github.com/Leofia)
-    *   LinkedIn: [[(https://linkedin.com/in/irem-serra-ya%C4%9F%C4%B1z-891a95234)]]
-    *   LinkedIn: [(https://linkedin.com/in/an%C4%B1l-erdal-7b7b98229/]
+    *   LinkedIn İrem Serra Yağız: [[(https://linkedin.com/in/irem-serra-ya%C4%9F%C4%B1z-891a95234)]]
+    *   LinkedIn Anıl Erdal: [(https://linkedin.com/in/an%C4%B1l-erdal-7b7b98229/]
    
 
 
