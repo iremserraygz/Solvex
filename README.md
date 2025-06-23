@@ -209,7 +209,9 @@ While this is a capstone project, potential contributions or feedback are always
 5.  Open a Pull Request.
 
 ---
-Demo video of the project: https://youtu.be/RDQWWmB0isQ?si=_hC-Ogq3NqcIgJ3r
+🎥 Project Demo
+<div align="center"> <a href="https://youtu.be/RDQWWmB0isQ?si=_hC-Ogq3NqcIgJ3r" target="_blank"> <img src="https://img.youtube.com/vi/RDQWWmB0isQ/0.jpg" alt="Watch Solvex Demo Video" width="640" /> <br> ▶️ <strong>Click to Watch the Demo on YouTube</strong> </a> </div>
+---
 
 ## 🧑‍💻 Developers
 
